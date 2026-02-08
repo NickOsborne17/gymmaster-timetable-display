@@ -1,0 +1,98 @@
+/* Admin Settings Page Styles */
+
+.gtt-admin-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.gtt-settings-panel {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.gtt-info-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gtt-info-box {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    border-left: 4px solid #2271b1;
+}
+
+.gtt-info-box h3 {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gtt-info-box code {
+    display: block;
+    background: #f0f0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+}
+
+.gtt-info-box ol,
+.gtt-info-box ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.gtt-info-box li {
+    margin-bottom: 5px;
+}
+
+.gtt-disabled-row {
+    opacity: 0.5;
+}
+
+.gtt-disabled-row input:disabled {
+    background-color: #f6f7f7;
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+    .gtt-admin-container {
+        flex-direction: column;
+    }
+    
+    .gtt-settings-panel,
+    .gtt-info-panel {
+        flex: 1;
+    }
+}
+
+/* Settings success message */
+.notice.updated {
+    border-left-color: #00a32a;
+}
+
+/* Form table improvements */
+.form-table th {
+    width: 200px;
+}
+
+.form-table input[type="url"],
+.form-table input[type="password"] {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-table .description {
+    font-style: italic;
+    color: #646970;
+}

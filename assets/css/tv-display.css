@@ -1,0 +1,249 @@
+/* TV Display Styles - Gym Timetable */
+
+.gtt-timetable-container {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 1em;
+    min-height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.gtt-timetable-container * {
+    box-sizing: border-box;
+}
+
+/* Header */
+.gtt-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gtt-title {
+    color: #ff6b35;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gtt-current-time {
+    color: #e0e0e0;
+    font-size: 22px;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Tables */
+.gtt-time-section.morning-table,
+.gtt-time-section.afternoon-table {
+    position: absolute;
+    width: 100%;
+}
+
+/* Weekly Grid Layout */
+.gtt-weekly-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.gtt-grid-header {
+    display: grid;
+    grid-template-columns: 110px repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.gtt-day-header {
+    background-color: #ff6b35;
+    color: #ffffff;
+    padding: 0.3em 0.1em;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.gtt-grid-row {
+    display: grid;
+    grid-template-columns: 110px repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: start;
+    max-width: 100%;
+}
+
+.gtt-time-label {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    padding: 0.1em 0.3em;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    align-self: start;
+    width: 100%;
+}
+
+.gtt-day-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 40px;
+}
+
+/* Class Card */
+.gtt-class-card {
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    font-weight: 400;
+}
+
+.gtt-class-left {
+    background-color: inherit;
+    padding: 0.2em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.gtt-class-name {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.gtt-class-right {
+    background-color: #ffffff;
+    padding: 0.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gtt-class-meta {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.gtt-class-time {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.gtt-class-location {
+    font-size: 14px;
+    color: #666666;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* No classes message */
+.gtt-no-classes {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gtt-no-classes p {
+    font-size: 28px;
+    color: #cccccc;
+    margin: 0;
+}
+
+/* Error message */
+.gtt-error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.gtt-error h2 {
+    margin-top: 0;
+    color: #c62828;
+}
+
+/* Loading state */
+.gtt-loading {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 1400px) {
+    .gtt-title {
+        font-size: 40px;
+    }
+    
+    .gtt-class-name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .gtt-timetable-container {
+        padding: 30px;
+    }
+    
+    .gtt-title {
+        font-size: 36px;
+    }
+    
+    .gtt-current-time {
+        font-size: 20px;
+    }
+    
+    .gtt-time-row {
+        flex-direction: column;
+    }
+    
+    .gtt-classes-in-slot {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .gtt-title {
+        font-size: 56px;
+    }
+    
+    .gtt-current-time {
+        font-size: 28px;
+    }
+    
+    .gtt-class-name,
+    .gtt-class-meta,
+    .gtt-class-time,
+    .gtt-class-location  {
+        font-size: 16px;
+    }
+}
+
+/* Animation for auto-refresh */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.gtt-classes-wrapper {
+    animation: fadeIn 0.5s ease-in;
+}
