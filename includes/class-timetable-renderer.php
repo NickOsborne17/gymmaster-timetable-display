@@ -220,9 +220,11 @@ class GTT_Timetable_Renderer {
                 <div class="gtt-class-time">
                     <?php echo esc_html($start_time . ' - ' . $end_time); ?>
                 </div>
+                <?php /*
                 <?php if ($location && !$is_virtual): ?>
                     <div class="gtt-class-location"><?php echo $location; ?></div>
                 <?php endif; ?>
+                */ ?>
             </div>
         </div>
         <?php
